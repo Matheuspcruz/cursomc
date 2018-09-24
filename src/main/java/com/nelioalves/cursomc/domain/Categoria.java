@@ -2,10 +2,18 @@ package com.nelioalves.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity // Classe deve ser persistida no banco
 public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 1L; //Serializable, numero de versão padrão
 	
+	@Id //Id da tabela
+	@GeneratedValue(strategy=GenerationType.IDENTITY)//Estrategia de geração altomatica de chave primaria	
 	private Integer id;
 	private String nome;
 	
